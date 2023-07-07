@@ -1,13 +1,65 @@
-<header>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-</header>
+<html>
 
 <body>
-  <h2>Deep-Link: product details</h2>
-  <p><a
-      href="oneappvit://linkaccess/salegallery?call_from=personalize&category=deposit&sub_category=deposit.for_use&sg_product_id=S41002">Premium
-      Debit Card</a>
-    :
-    <small>oneappvit://linkaccess/salegallery?call_from=personalize&category=deposit&sub_category=deposit.for_use&sg_product_id=S41002</small>
-  </p>
+  <h2>DeepLink</h2>
+  <p id="list"></p>
+
+
+  <script>
+    const deeplinks = [
+      {
+        name: 'oneappvit://linkaccess/auto-loan-payment-detail?call_from=personalize&call_icon_url=&path=autoloan/cyc-offering?',
+        shortName: 'AL - CYC Top Up (A1)',
+        parameters: [
+          {
+            key: "marketingCode",
+            value: "0001"
+          }
+        ]
+      },
+      {
+        name: 'oneappvit://linkaccess/openweburl?data=autoloan/campaign-offering/landing?type=deeplink&auth=1',
+        shortName: 'AL - Campaign Offering',
+        parameters: [
+          {
+            key: "call_from",
+            value: "personalize"
+          },
+          {
+            key: "marketingCode",
+            value: "0000"
+          },
+          {
+            key: "campaignCode",
+            value: "1111"
+          }
+        ]
+      }
+    ]
+
+
+
+
+
+    let text = ''
+    deeplinks.forEach((deeplink) => {
+      const params = deeplink.parameters.map(param => {
+
+        return `&${param.key}=${param.value}`
+      })
+      const allLink = `${deeplink.name}${params.join('')}`
+      const display = `
+      <a href='${allLink}'>${deeplink.shortName}</a>
+      <small>${allLink}</small>
+      <br>
+      `
+      text += display
+    })
+
+
+    document.getElementById('list').innerHTML = text;
+  </script>
+
 </body>
+
+</html>
