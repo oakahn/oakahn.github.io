@@ -34,6 +34,11 @@
             value: "1111"
           }
         ]
+      },
+      {
+        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993SG00781',
+        shortName: 'Push notification Sale Gallery - Credit Card List',
+        parameters: []
       }
     ]
 
@@ -50,8 +55,8 @@
       const allLink = `${deeplink.name}${params.join('')}`
       const display = `
       <a href='${allLink}'>${deeplink.shortName}</a>
-      <small>${allLink}</small>
-      <br>
+      <small>:${allLink}</small>
+      <br><br>
       `
       text += display
     })
