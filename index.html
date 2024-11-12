@@ -1,168 +1,49 @@
 <html>
+  <body>
+    <h2>DeepLink</h2>
+    <p id="list"></p>
 
-<body>
-  <h2>DeepLink</h2>
-  <p id="list"></p>
+    <!-- <APP_SCHEMA>/premium-debit-card?path=premium-debit-card/premium-card-theme-design&call_from=personalize&bin_no=43030633&account_type=SDA&card_type=all_free -->
 
+    <script>
+      const deeplinks = [
+        {
+          name: "oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993OAKINBOX2",
+          shortName: "Notification",
+          parameters: [],
+        },
+        {
+          name: "oneappvit://linkaccess/premium-debit-card?path=premium-debit-card/premium-card-theme-design&call_from=personalize&bin_no=43030633&account_type=SDA&card_type=all_free",
+          shortName: "PRB - TTB All free debit card",
+          parameters: [],
+        },
+        {
+          name: "oneappvit://linkaccess/premium-debit-card?path=premium-debit-card/premium-card-theme-design&call_from=personalize&bin_no=43030636&account_type=SDA&card_type=all_free_disney",
+          shortName: "PRB - Co-brand Physical",
+          parameters: [],
+        },
+        {
+          name: "oneappvit://linkaccess/premium-debit-card?path=premium-debit-card/premium-card-theme-design&call_from=personalize&bin_no=43030661&account_type=SDA&card_type=all_free_disney_digital",
+          shortName: "PRB - Co-brand Digital",
+          parameters: [],
+        },
+      ];
 
-  <script>
-    const deeplinks = [
-      {
-        name: 'oneappvit://linkaccess/auto-loan-payment-detail?call_from=personalize&call_icon_url=&path=autoloan/cyc-offering?',
-        shortName: 'AL - CYC Top Up (A1)',
-        parameters: [
-          {
-            key: "marketingCode",
-            value: "0001"
-          }
-        ]
-      },
-      {
-        name: 'oneappvit://linkaccess/openweburl?data=autoloan/campaign-offering/landing?type=deeplink&auth=1',
-        shortName: 'AL - Campaign Offering',
-        parameters: [
-          {
-            key: "call_from",
-            value: "personalize"
-          },
-          {
-            key: "marketingCode",
-            value: "0000"
-          },
-          {
-            key: "campaignCode",
-            value: "1111"
-          }
-        ]
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993PB00002',
-        shortName: 'Push notification - Transfer',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993SG00781',
-        shortName: 'Push notification Sale Gallery - Credit Card List',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993RL00120',
-        shortName: 'Push notification - PermanenetLine',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993COST001',
-        shortName: 'Push notification - Cold start',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993SG00782',
-        shortName: 'Push notification Sale Gallery - Credit Card List 2',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993MC00782',
-        shortName: 'Test test',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993AL00016',
-        shortName: 'openweburl/campaign-offering',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/notification-personal?refNo=001100000000000000000005937993OAKINBOX2',
-        shortName: 'Notification',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/openweburl?data=accounts/saving-goal/view-goal?auth=1&call_from=personalize&account_no=1382217154',
-        shortName: 'PRB - Saving goal list',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/openweburl?data=accounts/saving-goal/view-goal?auth=1&call_from=personalize&account_no=1382217154&action=create',
-        shortName: 'PRB - Add saving goal',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/common-widget-page?call_from=personalize&applicationName=my-tax&pageName=tax-planning&auth=1&queryParams=',
-        shortName: 'My Tax - Document',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/common-widget-page?call_from=personalize&applicationName=my-work&pageName=my-work-home&auth=0&queryParams=',
-        shortName: 'My Work - Home',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/common-widget-page?call_from=personalize&applicationName=my-tax&pageName=tax-planning&auth=1&queryParams=',
-        shortName: 'My Tax - Tax Planning',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/common-widget-page?call_from=personalize&applicationName=my-tax&pageName=product-list&auth=1&queryParams=',
-        shortName: 'My Tax - Products',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/openweburl?data=autoloan/campaign-offering/landing?marketingCode=23%20Jul%202021&call_from=personalize&type=deeplink&auth=1&campaignCode=23%20Jul%202021',
-        shortName: 'openweburl/campaign-offering',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/lending?path=product-list/credit-card?call_from=personalize&source=website&medium=message&campaignId=D912345&campaignName=car%20for%20cash&content=testbill',
-        shortName: 'lending product list (campaign tracking)',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/apply-lending?path=product-orientation?call_from=personalize&source=website&medium=message&campaignId=D912345&campaignName=car%20for%20cash&content=testbill',
-        shortName: 'RL - Personal Loans Product Orientation (campaign tracking)',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/auto-loan-payment-detail?call_from=personalize&path=autoloan/auto-loan-payment-detail?call_icon_url=&source=website&medium=message&campaignId=D912345&campaignName=car%20for%20cash&content=testbill',
-        shortName: 'Bill Payment - Auto Loan',
-        parameters: []
-      },
-      {
-        name: 'oneappuat://linkaccess/openweburl?data=investment/search-fund?call_from=mytax&fund_type=&asset_class=ttb%20smart%20port&fund_house_code=&custom=&is_risk_checked=false&auth=0',
-        shortName: 'openweburl-search-fund',
-        parameters: []
-      },
-      {
-        name: 'oneappuat://linkaccess/openweburl?data=investment/search-fund?call_from=mytax&fund_type=&asset_class=ttb smart port&fund_house_code=&custom=&is_risk_checked=false&auth=0',
-        shortName: 'openweburl-search-fund',
-        parameters: []
-      },
-      {
-        name: 'oneappvit://linkaccess/account-summary?tab=deposits',
-        shortName: 'openweburl-search-fund',
-        parameters: []
-      }
-    ]
-
-
-
-    let text = ''
-    deeplinks.forEach((deeplink) => {
-      const params = deeplink.parameters.map(param => {
-
-        return `&${param.key}=${param.value}`
-      })
-      const allLink = `${deeplink.name}${params.join('')}`
-      const display = `
+      let text = "";
+      deeplinks.forEach((deeplink) => {
+        const params = deeplink.parameters.map((param) => {
+          return `&${param.key}=${param.value}`;
+        });
+        const allLink = `${deeplink.name}${params.join("")}`;
+        const display = `
       <a href='${allLink}'>${deeplink.shortName}</a>
       <small>:${allLink}</small>
       <br><br>
-      `
-      text += display
-    })
+      `;
+        text += display;
+      });
 
-
-    document.getElementById('list').innerHTML = text;
-  </script>
-
-</body>
-
+      document.getElementById("list").innerHTML = text;
+    </script>
+  </body>
 </html>
